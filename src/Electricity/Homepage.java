@@ -6,8 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class Homepage  extends JFrame{
-	
+public  class Homepage  extends JFrame implements Runnable{
+	Thread t;
 	Homepage()
 	{
 		//to get image in frame
@@ -27,16 +27,34 @@ public class Homepage  extends JFrame{
 			setSize(i,i);
 			setLocation(400,150);
 			
+			
 		}
-		
-		
+		t=new Thread(this);
+		t.start();
+	}
 	
-		
+	
+	public void run()
+	{
+		try
+		{
+			Thread.sleep(7000);
+			setVisible(false);
+			new Login();
+			
+			
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			
+		}
 	}
 
 	public static void main(String[] args) {
 	
 		new Homepage();
+		
 
 	}
 
