@@ -42,8 +42,6 @@ public  class Homepage  extends JFrame implements Runnable{
 			setVisible(false);
 			new Login();
 			
-			
-			
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -54,8 +52,7 @@ public  class Homepage  extends JFrame implements Runnable{
 	public static void main(String[] args) {
 	
 		new Homepage();
-		
-
+	
 	}
 
 }
