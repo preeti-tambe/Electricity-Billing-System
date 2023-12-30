@@ -2,7 +2,10 @@ package Electricity;
 
 import java.awt.Choice;
 import java.awt.Color;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -49,6 +52,43 @@ public class Signup extends JFrame {
 		JTextField utext = new JTextField();
 		utext.setBounds(250,130,150,20);
 		panel.add(utext);
+		
+		JLabel name = new JLabel("Name ");
+		name.setBounds(100, 170,140,20);
+		panel.add(name);
+		
+		JTextField namet = new JTextField();
+		namet.setBounds(250,170,150,20);
+		panel.add(namet);
+		
+		JLabel password = new JLabel("Password ");
+		password.setBounds(100, 210,140,20);
+		panel.add(password);
+		
+		JTextField passtext = new JTextField();
+		passtext.setBounds(250,210,150,20);
+		panel.add(passtext);
+		
+		JButton create = new JButton ("Create");
+		create.setBounds(140,250,90,20);
+		create.setBackground(Color.black);
+		create.setForeground(Color.WHITE);
+		panel.add(create);
+		
+		JButton back = new JButton ("Back");
+		back.setBounds(280,250,90,20);
+		back.setBackground(Color.black);
+		back.setForeground(Color.WHITE);
+		panel.add(back);
+		
+		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/signupImage.png"));
+		Image i2 = i1.getImage().getScaledInstance(250, 250, Image.SCALE_DEFAULT);
+		ImageIcon i3=new ImageIcon(i2);
+		JLabel image = new JLabel(i3);
+		image.setBounds(410,30,250,250);
+		panel.add(image);
+		
+		
 		
 		
 		
