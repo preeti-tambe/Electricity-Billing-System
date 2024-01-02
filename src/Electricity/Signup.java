@@ -3,6 +3,8 @@ package Electricity;
 import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,8 +15,8 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-public class Signup extends JFrame {
-	
+public class Signup extends JFrame implements ActionListener{
+	JButton create,back;
 	Signup()
 	{
 		setBounds(450,300,700,400);
@@ -69,16 +71,18 @@ public class Signup extends JFrame {
 		passtext.setBounds(250,210,150,20);
 		panel.add(passtext);
 		
-		JButton create = new JButton ("Create");
+		 create = new JButton ("Create");
 		create.setBounds(140,250,90,20);
 		create.setBackground(Color.black);
 		create.setForeground(Color.WHITE);
+		create.addActionListener(this);
 		panel.add(create);
 		
-		JButton back = new JButton ("Back");
+		 back = new JButton ("Back");
 		back.setBounds(280,250,90,20);
 		back.setBackground(Color.black);
 		back.setForeground(Color.WHITE);
+		back.addActionListener(this);
 		panel.add(back);
 		
 		ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/signupImage.png"));
@@ -88,14 +92,20 @@ public class Signup extends JFrame {
 		image.setBounds(410,30,250,250);
 		panel.add(image);
 		
-		
-		
-		
-		
-		
-		
-		
 		setVisible(true);
+		
+	}
+	
+	public void actionPerformed(ActionEvent ae)
+	{
+		if(ae.getSource()== create)
+		{
+			
+		}else if(ae.getSource()==back)
+		{
+			setVisible(false);
+			new Login();
+		}
 		
 		
 	}

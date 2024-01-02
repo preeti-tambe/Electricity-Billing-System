@@ -3,6 +3,8 @@ package Electricity;
 import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -10,8 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Login extends JFrame{
-	
+public class Login extends JFrame implements ActionListener{
+	JButton loginbtn,cancel,sign;
 	Login()
 	{
 		super("Login Page");
@@ -49,8 +51,9 @@ public class Login extends JFrame{
 		Image i2 = i1.getImage().getScaledInstance(16, 16, Image.SCALE_DEFAULT);
 		ImageIcon i3 = new ImageIcon(i2);
 		
-		JButton loginbtn = new JButton("Login",i3);
+		 loginbtn = new JButton("Login",i3);
 		loginbtn.setBounds(330, 160, 100, 20);
+		loginbtn.addActionListener(this);
 		add(loginbtn);
 		
 
@@ -58,15 +61,17 @@ public class Login extends JFrame{
 		Image i5 = i4.getImage().getScaledInstance(16, 16, Image.SCALE_DEFAULT);
 		ImageIcon i6 = new ImageIcon(i5);
 		
-		JButton cancel = new JButton("Cancel",i6);
+		 cancel = new JButton("Cancel",i6);
 		cancel.setBounds(450, 160, 100, 20);
+		cancel.addActionListener(this);
 		add(cancel);
 		
 		ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("icon/signup.png"));
 		Image i8 = i7.getImage().getScaledInstance(16, 16, Image.SCALE_DEFAULT);
 		ImageIcon i9 = new ImageIcon(i8);
-		JButton sign = new JButton("Signup",i9);
+		 sign = new JButton("Signup",i9);
 		sign.setBounds(380, 200, 100, 20);
+		sign.addActionListener(this);
 		add(sign);
 		
 		ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("icon/second.jpg"));
@@ -81,6 +86,22 @@ public class Login extends JFrame{
 		setSize(800,400);
 		setLocation(400,200);
 		setVisible(true);
+	}
+	public void actionPerformed(ActionEvent ae)
+	{
+		if(ae.getSource()==loginbtn)
+		{
+			
+		}else if(ae.getSource()==cancel)
+		{
+			setVisible(false);
+		}else if(ae.getSource()==sign)
+		{
+			setVisible(false);
+			new Signup();
+		}
+		
+		
 	}
 
 	
