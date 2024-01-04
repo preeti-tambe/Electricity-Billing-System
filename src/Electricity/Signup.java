@@ -17,6 +17,8 @@ import javax.swing.border.TitledBorder;
 
 public class Signup extends JFrame implements ActionListener{
 	JButton create,back;
+	Choice acctyp ;
+	JTextField utext,namet,passtext,metertext;
 	Signup()
 	{
 		setBounds(450,300,700,400);
@@ -33,7 +35,7 @@ public class Signup extends JFrame implements ActionListener{
 		heading.setBounds(100, 50,140,20);
 		panel.add(heading);
 		
-		Choice acctyp = new Choice ();
+		 acctyp = new Choice ();
 		acctyp.add("Admin");
 		acctyp.add("Customer");
 		acctyp.setBounds(250,50,150,20);
@@ -43,7 +45,7 @@ public class Signup extends JFrame implements ActionListener{
 		meternum.setBounds(100, 90,140,20);
 		panel.add(meternum);
 		
-		JTextField metertext = new JTextField();
+		 metertext = new JTextField();
 		metertext.setBounds(250,90,150,20);
 		panel.add(metertext);
 		
@@ -51,7 +53,7 @@ public class Signup extends JFrame implements ActionListener{
 		username.setBounds(100, 130,140,20);
 		panel.add(username);
 		
-		JTextField utext = new JTextField();
+		 utext = new JTextField();
 		utext.setBounds(250,130,150,20);
 		panel.add(utext);
 		
@@ -59,7 +61,7 @@ public class Signup extends JFrame implements ActionListener{
 		name.setBounds(100, 170,140,20);
 		panel.add(name);
 		
-		JTextField namet = new JTextField();
+		 namet = new JTextField();
 		namet.setBounds(250,170,150,20);
 		panel.add(namet);
 		
@@ -67,7 +69,7 @@ public class Signup extends JFrame implements ActionListener{
 		password.setBounds(100, 210,140,20);
 		panel.add(password);
 		
-		JTextField passtext = new JTextField();
+		 passtext = new JTextField();
 		passtext.setBounds(250,210,150,20);
 		panel.add(passtext);
 		
@@ -100,6 +102,11 @@ public class Signup extends JFrame implements ActionListener{
 	{
 		if(ae.getSource()== create)
 		{
+			String atype= acctyp.getSelectedItem();
+			String susername=utext.getText();
+			String sname=namet.getText();
+			String spass=passtext.getText();
+			String smeter=metertext.getText();
 			
 		}else if(ae.getSource()==back)
 		{
